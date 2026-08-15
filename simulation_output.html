@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>4-Bit ALU Simulation Output</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        header {
+            background: #24292f;
+            color: white;
+            padding: 35px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 34px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d0d7de;
+        }
+
+        .card {
+            background: white;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #0969da;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: #0969da;
+            color: white;
+            padding: 13px;
+        }
+
+        td {
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            font-size: 15px;
+        }
+
+        tr:nth-child(even) {
+            background: #f6f8fa;
+        }
+
+        .success {
+            background: #dafbe1;
+            color: #116329;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .formula {
+            background: #f6f8fa;
+            border-left: 5px solid #0969da;
+            padding: 15px;
+            margin: 12px 0;
+            font-family: monospace;
+            font-size: 17px;
+        }
+
+        .terminal {
+            background: #161b22;
+            color: #7ee787;
+            padding: 22px;
+            border-radius: 8px;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.6;
+        }
+
+        .operation {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .operation div {
+            background: #f6f8fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .operation strong {
+            color: #0969da;
+        }
+
+        footer {
+            text-align: center;
+            margin: 30px;
+            color: #666;
+        }
+
+        @media(max-width: 700px) {
+
+            .operation {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>4-Bit ALU</h1>
+
+        <p>
+            Verilog HDL Simulation Output
+        </p>
+
+    </header>
+
+
+    <div class="card">
+
+        <h2>Simulation Status</h2>
+
+        <div class="success">
+
+            ✓ Simulation completed successfully
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>ALU Operations</h2>
+
+        <div class="operation">
+
+            <div>
+                <strong>000</strong><br>
+                ADD
+            </div>
+
+            <div>
+                <strong>001</strong><br>
+                SUB
+            </div>
+
+            <div>
+                <strong>010</strong><br>
+                AND
+            </div>
+
+            <div>
+                <strong>011</strong><br>
+                OR
+            </div>
+
+            <div>
+                <strong>100</strong><br>
+                XOR
+            </div>
+
+            <div>
+                <strong>101</strong><br>
+                NOT A
+            </div>
+
+            <div>
+                <strong>110</strong><br>
+                INC A
+            </div>
+
+            <div>
+                <strong>111</strong><br>
+                DEC A
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Test Inputs</h2>
+
+        <div class="formula">
+
+            A = 1010 (10 decimal)
+
+        </div>
+
+        <div class="formula">
+
+            B = 0011 (3 decimal)
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Simulation Results</h2>
+
+        <table>
+
+            <tr>
+                <th>Time</th>
+                <th>A</th>
+                <th>B</th>
+                <th>Select</th>
+                <th>Operation</th>
+                <th>Result</th>
+                <th>Carry</th>
+            </tr>
+
+            <tr>
+                <td>10 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>000</td>
+                <td>ADD</td>
+                <td>1101</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>20 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>001</td>
+                <td>SUB</td>
+                <td>0111</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>30 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>010</td>
+                <td>AND</td>
+                <td>0010</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>40 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>011</td>
+                <td>OR</td>
+                <td>1011</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>50 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>100</td>
+                <td>XOR</td>
+                <td>1001</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>60 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>101</td>
+                <td>NOT A</td>
+                <td>0101</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>70 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>110</td>
+                <td>INC A</td>
+                <td>1011</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>80 ns</td>
+                <td>1010</td>
+                <td>0011</td>
+                <td>111</td>
+                <td>DEC A</td>
+                <td>1001</td>
+                <td>0</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Console Output</h2>
+
+        <div class="terminal">================================================
+             4-BIT ALU SIMULATION
+================================================
+Time   A     B     Sel   Operation   Result  Carry
+------------------------------------------------
+10     1010  0011   000     ADD       1101      0
+20     1010  0011   001     SUB       0111      0
+30     1010  0011   010     AND       0010      0
+40     1010  0011   011     OR        1011      0
+50     1010  0011   100     XOR       1001      0
+60     1010  0011   101     NOT       0101      0
+70     1010  0011   110     INC       1011      0
+80     1010  0011   111     DEC       1001      0
+------------------------------------------------
+Simulation completed successfully.
+================================================</div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Expected Results</h2>
+
+        <table>
+
+            <tr>
+                <th>Operation</th>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+
+            <tr>
+                <td>ADD</td>
+                <td>A + B</td>
+                <td>1101</td>
+            </tr>
+
+            <tr>
+                <td>SUB</td>
+                <td>A - B</td>
+                <td>0111</td>
+            </tr>
+
+            <tr>
+                <td>AND</td>
+                <td>A & B</td>
+                <td>0010</td>
+            </tr>
+
+            <tr>
+                <td>OR</td>
+                <td>A | B</td>
+                <td>1011</td>
+            </tr>
+
+            <tr>
+                <td>XOR</td>
+                <td>A ^ B</td>
+                <td>1001</td>
+            </tr>
+
+            <tr>
+                <td>NOT</td>
+                <td>~A</td>
+                <td>0101</td>
+            </tr>
+
+            <tr>
+                <td>INC</td>
+                <td>A + 1</td>
+                <td>1011</td>
+            </tr>
+
+            <tr>
+                <td>DEC</td>
+                <td>A - 1</td>
+                <td>1001</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Conclusion</h2>
+
+        <p>
+            The 4-bit ALU was successfully designed and simulated using
+            Verilog HDL. All eight arithmetic and logical operations
+            produced the expected results.
+        </p>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    4-Bit ALU Project | Verilog HDL
+
+</footer>
+
+</body>
+
+</html>
